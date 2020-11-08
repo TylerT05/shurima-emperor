@@ -33,6 +33,7 @@ const MatchesList = ({ matches, basicInfo }) => (
                         ".png"
                       }
                       style={{ width: 50 }}
+                      alt="champion icon"
                     />
                   </div>
                   <div className="col">

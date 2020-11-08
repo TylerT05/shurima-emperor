@@ -26,6 +26,7 @@ const EntriesList = ({ entries }) => (
                       <img
                         src={"/ranked-emblems/Emblem_" + entry.tier + ".png"}
                         style={{ width: 80 }}
+                        alt="tier icon"
                       />
                     </div>
                     <div className="col-9" style={{ marginTop: 16 }}>

@@ -49,8 +49,12 @@ export class MatchDetailPage extends Component {
           teams: result.teams,
           bans: result.bans,
           participants: result.participants,
-          participantsTeam1: result.participants.filter((p) => p.teamId == 100),
-          participantsTeam2: result.participants.filter((p) => p.teamId == 200),
+          participantsTeam1: result.participants.filter(
+            (p) => p.teamId === 100
+          ),
+          participantsTeam2: result.participants.filter(
+            (p) => p.teamId === 200
+          ),
         });
       });
   }

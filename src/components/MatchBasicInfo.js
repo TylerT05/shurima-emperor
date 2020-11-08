@@ -42,7 +42,7 @@ const MatchBasicInfo = ({ summonerBasicInfo, participants, match }) => (
                 {summonerBasicInfo.summonerLevel}
               </span>
               {participants.map((p) =>
-                p.summonerName == summonerBasicInfo.name ? (
+                p.summonerName === summonerBasicInfo.name ? (
                   p.stats.win ? (
                     <img
                       className="rounded-circle bg-primary"
@@ -52,6 +52,7 @@ const MatchBasicInfo = ({ summonerBasicInfo, participants, match }) => (
                         summonerBasicInfo.profileIconId +
                         ".png"
                       }
+                      alt="summoner icon"
                     />
                   ) : (
                     <img
@@ -62,6 +63,7 @@ const MatchBasicInfo = ({ summonerBasicInfo, participants, match }) => (
                         summonerBasicInfo.profileIconId +
                         ".png"
                       }
+                      alt="summoner icon"
                     />
                   )
                 ) : (
@@ -77,7 +79,7 @@ const MatchBasicInfo = ({ summonerBasicInfo, participants, match }) => (
             <div className="row">
               <div className="col-md-2" style={{ padding: 10 }}>
                 {participants.map((p, key) =>
-                  p.summonerName == summonerBasicInfo.name ? (
+                  p.summonerName === summonerBasicInfo.name ? (
                     match.gameDuration < 300 ? (
                       <p
                         className="text-white bg-secondary"
@@ -119,7 +121,7 @@ const MatchBasicInfo = ({ summonerBasicInfo, participants, match }) => (
               </div>
               <div className="col-md-10" style={{ padding: 10 }}>
                 {queues.map((q, key) =>
-                  q.queueId == match.queueId ? (
+                  q.queueId === match.queueId ? (
                     <p
                       className="text-left text-secondary"
                       style={{

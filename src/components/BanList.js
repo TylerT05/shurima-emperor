@@ -14,6 +14,7 @@ const BanList = ({ bans }) => (
             style={{
               padding: 2,
             }}
+            alt="summoner icon"
           />
         ) : (
           ""
@@ -38,6 +39,7 @@ const BanList = ({ bans }) => (
             style={{
               padding: 2,
             }}
+            alt="banned champion icon"
           />
         ) : (
           ""

@@ -15,7 +15,7 @@ const ParticipantList = ({
       <td>
         <div className="row" style={{ height: 42 }}>
           <div className="col-1">
-            {p.summonerName == name ? (
+            {p.summonerName === name ? (
               <img
                 className="rounded-circle bg-warning"
                 src={"/img/champion/" + champions.keys[p.championId] + ".png"}
@@ -23,8 +23,9 @@ const ParticipantList = ({
                 style={{
                   padding: 2,
                 }}
+                alt="champion icon"
               />
-            ) : p.teamId == 100 ? (
+            ) : p.teamId === 100 ? (
               <img
                 className="rounded-circle bg-primary"
                 src={"/img/champion/" + champions.keys[p.championId] + ".png"}
@@ -32,6 +33,7 @@ const ParticipantList = ({
                 style={{
                   padding: 2,
                 }}
+                alt="champion icon"
               />
             ) : (
               <img
@@ -41,26 +43,29 @@ const ParticipantList = ({
                 style={{
                   padding: 2,
                 }}
+                alt="champion icon"
               />
             )}
           </div>
           <div className="col-1">
             <div className="container">
               {Object.keys(summoner["data"]).map((s) =>
-                summoner["data"][s]["key"] == p.spell1Id ? (
+                summoner["data"][s]["key"] === p.spell1Id ? (
                   <img
                     src={"/img/spell/" + summoner["data"][s]["image"]["full"]}
                     width={20}
+                    alt="summoner spell icon"
                   />
                 ) : (
                   ""
                 )
               )}
               {Object.keys(summoner["data"]).map((s) =>
-                summoner["data"][s]["key"] == p.spell2Id ? (
+                summoner["data"][s]["key"] === p.spell2Id ? (
                   <img
                     src={"/img/spell/" + summoner["data"][s]["image"]["full"]}
                     width={20}
+                    alt="summoner spell icon"
                   />
                 ) : (
                   ""
@@ -71,11 +76,15 @@ const ParticipantList = ({
           <div className="col-1">
             <div className="container">
               {allRunes.map((r) =>
-                r["id"] == p.stats.perkPrimaryStyle
+                r["id"] === p.stats.perkPrimaryStyle
                   ? r["slots"].map((rr) =>
                       rr["runes"].map((rrr) =>
-                        rrr["id"] == p.stats.perk0 ? (
-                          <img src={"/img/" + rrr.icon} width={20} />
+                        rrr["id"] === p.stats.perk0 ? (
+                          <img
+                            src={"/img/" + rrr.icon}
+                            width={20}
+                            alt="summoner rune icon"
+                          />
                         ) : (
                           ""
                         )
@@ -84,8 +93,12 @@ const ParticipantList = ({
                   : ""
               )}
               {allRunes.map((r) =>
-                r["id"] == p.stats.perkSubStyle ? (
-                  <img src={"/img/" + r.icon} width={16} />
+                r["id"] === p.stats.perkSubStyle ? (
+                  <img
+                    src={"/img/" + r.icon}
+                    width={16}
+                    alt="summoner rune icon"
+                  />
                 ) : (
                   ""
                 )
@@ -106,36 +119,42 @@ const ParticipantList = ({
               src={"/img/item/" + p.stats.item0 + ".png"}
               width={20}
               onError={(i) => (i.target.src = "/img/item-background.png")}
+              alt="item icon"
             />
             <img
               className="rounded border border-secondary"
               src={"/img/item/" + p.stats.item1 + ".png"}
               width={20}
               onError={(i) => (i.target.src = "/img/item-background.png")}
+              alt="item icon"
             />
             <img
               className="rounded border border-secondary"
               src={"/img/item/" + p.stats.item2 + ".png"}
               width={20}
               onError={(i) => (i.target.src = "/img/item-background.png")}
+              alt="item icon"
             />
             <img
               className="rounded border border-secondary"
               src={"/img/item/" + p.stats.item3 + ".png"}
               width={20}
               onError={(i) => (i.target.src = "/img/item-background.png")}
+              alt="item icon"
             />
             <img
               className="rounded border border-secondary"
               src={"/img/item/" + p.stats.item4 + ".png"}
               width={20}
               onError={(i) => (i.target.src = "/img/item-background.png")}
+              alt="item icon"
             />
             <img
               className="rounded border border-secondary"
               src={"/img/item/" + p.stats.item5 + ".png"}
               width={20}
               onError={(i) => (i.target.src = "/img/item-background.png")}
+              alt="item icon"
             />
           </div>
           <div className="col">
@@ -168,7 +187,7 @@ const ParticipantList = ({
                 height: 4,
               }}
             >
-              {p.summonerName == name ? (
+              {p.summonerName === name ? (
                 <div
                   class="progress-bar bg-warning"
                   style={{
@@ -178,7 +197,7 @@ const ParticipantList = ({
                     }%`,
                   }}
                 ></div>
-              ) : p.teamId == 100 ? (
+              ) : p.teamId === 100 ? (
                 <div
                   class="progress-bar"
                   style={{

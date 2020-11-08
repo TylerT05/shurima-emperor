@@ -25,7 +25,7 @@ export class HomePage extends Component {
   onSearch() {
     const { history } = this.props;
 
-    if (this.state.summonerName != "") {
+    if (this.state.summonerName !== "") {
       fetch(
         `https://localhost:44355/api/summoners/verify-by-name/${this.state.summonerName}`
       )
@@ -66,6 +66,7 @@ export class HomePage extends Component {
               <img
                 style={{ marginRight: 14, width: 80 }}
                 src={"/shurima_logo.png"}
+                alt="web app logo"
               />
             </Link>
             <ul className="navbar-nav mr-auto">
